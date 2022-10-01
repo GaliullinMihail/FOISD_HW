@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html class="responsive" lang="ru">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width = device-width,initial-slace=1" />
+        <link rel="icon" href="https://store.steampowered.com/favicon.ico">
+        <title>Войти</title>
+        <style>
+body {
+    display: block;
+    background-color: #181A21;
+}
+
+a{
+    color: #b8b6b4; 
+    text-decoration: none;  
+}
+
+.responsive
+{
+    height = 100%;
+}
+
+.responsive_page_full
+{
+    padding = 0;
+    margin = 0;
+}
+
+.div {
+
+    display: block;
+}
+
+body::-webkit-scrollbar {
+    height: 12px;
+    width: 14px;
+    background: transparent;
+    z-index: 12;
+    overflow: visible;
+}
+
+body::-webkit-scrollbar-thumb {
+    width: 10px;
+    background-color: #434953;
+    border-radius: 10px;
+    z-index: 12;
+    border: 4px solid rgba(0,0,0,0);
+    background-clip: padding-box;
+    margin: 4px;
+    min-height: 32px;
+    min-width: 32px;
+}
+
+body::-webkit-scrollbar-corner {
+    background: #202020;
+}
+
+.global_header {
+    background: #171a21;
+    background-position: center top;
+    min-width: 940px;
+    font-family: "Motiva Sans", Sans-serif;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.content {
+    background: #171a21;
+    position: relative;
+    width: 940px;
+    height: 104px;
+    margin: 0px auto;
+    z-index: 402;
+}
+
+.logo {
+    float: left;
+    padding-top: 30px;
+    margin-right: 40px;
+    width: 176px;
+    height: 44px;
+}
+
+.supernav {
+    position: absolute;
+    left: 200px;
+}
+
+.menu_item_supernav {
+    display: block;
+    position: relative;
+    padding-top: 45px;
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-bottom: 7px;
+    line-height: 16px;
+    float: left;
+    font-size: 14px;
+    color: #b8b6b4;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.menu_item {
+    display: block;
+    position: relative;
+    padding-top: 45px;
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-bottom: 7px;
+    line-height: 16px;
+    float: left;
+    font-size: 14px;
+    color: #b8b6b4;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.global_actions {
+    position: absolute;
+    right: 0px;
+    top: 6px;
+    height: 21px;
+    line-height: 21px;
+    color: #b8b6b4;
+    font-size: 11px;
+    z-index: 401;
+}
+
+.global_actions_menu {
+    line-height: 24px;
+    vertical-align: top;
+    display: inline-block
+}
+
+.header_installSteam {
+    display: inline-block;
+    position: relative;
+    height: 24px;
+    line-height: 24px;
+    background-color: #5c7e10;
+    align-items:center;
+    justify-content:center;
+    
+}
+
+.header_installSteam_content {
+    display: inline-block;
+    padding-left: 35px;
+    padding-right: 9px;
+    background-position: 10px 5px;
+    background-image: url(https://store.akamai.steamstatic.com/public/shared/images/header/btn_header_installsteam_download.png?v=1);
+    background-repeat: no-repeat;
+    text-decoration: none;
+    color: #e5e4dc;
+    font-weight: normal;
+}
+
+.global_actions_link {
+    color: #b8b6b4;
+    text-decoration: none;
+    display:inline-block;
+    margin-right:7px;
+    margin-left:7px;
+}
+
+.page_content {
+    width: 100%;
+    background: radial-gradient(rgba(24, 26, 33, 0) 0%, #181A21 100%) fixed no-repeat, url(https://store.akamai.steamstatic.com/public/shared/images/joinsteam/new_login_bg_strong_mask.jpg) center top no-repeat, #181A21;
+}
+
+.login {
+    color: #E9E9E9;
+    font-family: "Motiva Sans", Sans-serif;
+    font-weight: normal;
+}
+
+.login_login_container {
+    padding-top: 80px;
+    padding-bottom: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login_dialog {
+    position: relative; 
+}
+
+.login_dialog_flex_col {
+    display: flex;
+    flex-direction: column;
+}
+
+.login_dialog_primary_header {
+    color: #fff;
+    font-size: 32px;
+    text-transform: uppercase;
+    letter-spacing: .055em;
+    font-weight: 200;
+    padding-bottom:40px;
+}
+
+.login_dialog_form_container {
+    background-color: #181a21;
+    border-radius: 4px;
+    padding: 24px 32px;
+    flex: 1;
+    min-width: 636px;
+}
+
+.login_dialog_form_container_main {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+}
+
+.login_dialog_login_form {
+    flex: 1;
+    display: grid;
+    gap: 12px;
+    grid-template-columns: 1fr;
+}
+
+.login_dialog_text_field {
+    display: grid;
+    grid-template-areas:
+        "label hint"
+        "input input";
+    grid-template-columns: 1fr min-content;
+    gap: 2px;
+}
+
+.login_dialog_text_field_highlight {
+    color: #1999ff;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: .02em;
+    user-select: none;
+}
+
+.login_dialog_text_input {
+    border-radius: 2px;
+    color: #fff;
+    padding: 10px;
+    background-color: #32353c;
+    outline: none;
+    font-size: 15px;
+    grid-area: input;
+    border: 1px solid #32353c;
+}
+
+.login_dialog_checkbox_field {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+}
+
+.login_dialog_checkbox_box {
+    width: 14px;
+    height: 14px;
+    padding: 3px;
+    border-radius: 2px;
+    background-color: #32353c;
+    cursor: pointer;
+}
+
+.login_dialog_checkbox_text {
+    color: #afafaf;
+    font-size: 12px;
+    user-select: none;
+    padding-left: 6px;
+}
+
+.login_dialog_sing_button_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login_dialog_sing_button {
+    position: relative;
+    background: linear-gradient(90deg, #06BFFF 0%, #2D73FF 100%);
+    border-radius: 2px;
+    border: none;
+    outline: none;
+    padding: 12px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: inherit;
+    text-align: center;
+    letter-spacing: .03em;
+    cursor: pointer;
+    width: 270px;
+    height: 50px;
+}
+
+.login_dialog_help {
+    text-align: center;
+    color: #afafaf;
+    font-size: 12px;
+    text-decoration: underline;
+    cursor: pointer;
+    padding-top:34px;   
+}
+
+.login_dialog_qr_section {
+    flex: 0;
+    display: grid;
+    gap: 4px;
+    margin-left: 24px;
+}
+
+.login_dialog_qr_section_beta_container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 200px;
+}
+
+.login_dialog_qr_section_beta_tag {
+    color: #1999ff;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    margin: 6px 0px;
+    text-transform: uppercase;
+    letter-spacing: .02em;
+}
+
+.login_dialog_qr_section_beta_subtitles {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px 0px;
+}
+
+.login_dialog_qr_section_code {
+    width: 120px;
+    fill: #afafaf;
+}
+
+.login_dialog_qr_section_beta_subtitles_text {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #afafaf;
+    margin: 8px;
+}
+
+.login_dialog_qr_section_join_beta_button {
+    background-color: rgba(255,255,255,.1);
+    border-radius: 2px;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: center;
+    color: #fff;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.login_dialog_qr_section_link {
+    text-align: center;
+    text-decoration-line: underline;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 24px;
+    color: #afafaf;
+    padding: 12px 0px;
+    cursor: pointer;
+}
+
+.login_bottom_row {
+    display: flex;
+    flex-direction: row;
+    padding-top: 48px;
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+    justify-content: center;
+    background-color: #181A21;
+}
+
+.login_bottom_row_item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    max-width: 200px;
+}
+
+.subtext {
+    font-size: 14px;
+    color: #b8b6b4;
+}
+
+.login_about_link {
+    max-width: 60%;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 10px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.join_image_login_bottom_row_item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    max-width: 200px;
+}
+
+.button_medium {
+    display: block;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff ;
+    background: transparent;
+    padding: 0 15px;
+    line-height: 30px;
+}
+
+.footer {
+    background-color: #181A21;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 16px 0 60px 0;
+    margin: 0;
+    background: #171a21;
+}
+
+.footer_content {
+    width: 940px;
+    margin: 0px auto;
+    padding-top: 40px;
+    height:127px;
+}
+
+.footer_line {
+    height: 8px;
+    border-top: 1px solid #363c44;
+    display:block;
+}
+
+.footer_logo_steam {
+    float: right;
+    padding-top: 2px;
+}
+
+.footer_logo_valve {
+    float: left;
+    padding-top: 2px;
+}
+
+.footer_text {
+    float: left;
+    margin-left: 12px;
+    color: #8F98A0;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.footer_link {
+    color: #C6D4DF;
+    text-decoration: none;
+}
+
+.value_links {
+    margin-top: 8px;
+    float: left;
+    font-family: "Motiva Sans", Sans-serif;
+    font-weight: normal;
+    font-size: 13px;
+    color: #61686D;
+}
+
+
+
+.responsive_header {
+    display: none;
+    background: #171a21;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 20;
+    box-shadow: 0 0 7px 0 rgb(0 0 0 / 75%);
+    overflow: hidden;
+    padding: 13px 8px;
+}
+
+.responsive_header_content{
+    
+}
+
+.responsive_menu_logo{
+    position: absolute;
+    top: 9px;
+    cursor: pointer;
+    width: 36px;
+    height: 31px;
+    left: 8px;
+}
+
+.button_hamburger{
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+    width: 36px;
+    height: 31px;
+}
+
+
+
+
+.responsive_header_logo{
+    
+}
+
+.responsive_page_menu_main
+{
+    box-shadow: 0 0 7px 0 rgb(0 0 0 / 75%);
+    transition: left 0.5s, right 0.5s;
+    left: -280px;  
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    overflow: hidden;
+    background: #171a21;
+    z-index: 30;
+    width: 280px;
+}
+
+.button_hamburger:hover .responsive_page_menu_main
+{
+    left: 0px;
+}
+
+
+
+.responsive_page_menu{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+    overflow-y: auto;
+    color: #8a8a8a;
+}
+
+.mainmenu
+{
+    background: #171a21;
+    font-size: 22px;
+    position: relative;
+    min-height: 100%;
+    text-align: start;
+}
+
+.mainmenu_contents_items{
+    font-family: "Motiva Sans", Sans-serif;
+    font-weight: 200;
+}
+
+.mainmenu_footer_spacer{
+    height: 160px;
+}
+
+.mainmenu_footer{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    font-size: 10px;
+    white-space: normal;
+    color: #8a8a8a;
+    padding: 0 12px 24px 12px;
+}
+
+.mainmenu_footer_logo{
+    
+}
+
+.menuitem{
+    position: relative;
+    border-top: 1px solid #2f3138;
+    border-bottom: 1px solid #000000;
+    color: #C6D4DF;
+    text-decoration: none;
+    display: block;
+    padding: 0 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 2.5em;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.chevron{
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAAwCAYAAACG5f33AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABFxJREFUeNrkmg9klGEcx5/dMY4Y44hjxIgxRpSy7NwspSmNWZayGGmKFJGylCJSmlJMKctiylKa5aZpSmmMMWIcY4xxjGPEmPX72ffN23Z7732f3/Pe+97tx9dtd/e87/N+7n1+/563Ym1tTbmx8fHxLnq5QzqYSqXmbO+rMrMoaZDUz5dX6MsRl/A66OU5KUFK0/9xVb42QOLr/UTaLwZIsI7hoFG8VUsapferyhDeI1In/o7xdZL2Og2ocFrCBKkFv0Rlvo9JR0grZQKvl3Qrz/tLpCRpxhNAgteEXyDmcNL3pHbSaonDu0B67PB5ln0/adYVQILHt+0X0g4XJ39G6ilheJ0IGoVsAXdixhEgwWugl68kLz7uHulaCcJj/z5s8++FbJ50ADA3AyR4dYCnE2Uvkp6UELwU/HvM47gMlvPifwAJXi3gJQSTOkV6UwLw9sBF6WYSvwFxKbJhjc8LJ/aSdDjk8HYjOErSMAaYy7eE+aDpQrlPAfsDZzsZQni8un4JV9kIqc1K3/IFkWos5XrBSRxzp4CM/foPFAK6NkZqtee+W6UxcUCsE5yMXcI+e8QK0KpwPQ2CY3wnHcIKc5VIJ3BSyS+WQdjPBggvBrfUKDjGJODlvJZyNfTyjVQjPHkzaTkAeFyCvkW+p2vTcEc5z7WwwfQmqLp50NYc0I22SacVVOGmHyhMsC0bQp5YrLr5Kem80P38S5hFAG0lHief1YJJFatu5sbvdcH4TSWbGKCtyZAWJqG3STd9hHeZ9ECYPfCdN+fmy54AAmIjIMYEk+zB3WjaulAN6dqWbStjAAFRtxD3s24+gYgbFcBr9pr8awEExKNoBVVqTngFWf2Yoc7KqGAuOcCb8jpQGyAgSn91E3Wzl+bvVnNgeD91BosAAiLnWQPCpZNEzuXV6gEvLoDH+emE7vVHDCwf9mPdwiI/rZGo78KyjQtcSJsEnimAbK/Uekda1xKA6BbGTk3odngnSZ+lF24KIBu3868Ixte5jOxWz1K3ycGV0Bm1vqOowgSQ7aEwSeaA8MEhmlqdFUmvshtlpQojQKvSuC8Y34JkOJqnszKsZN3yc3A3KswA2a6S+gTjObLbN7qjiPSS/RZ2L/2mL9QvgGyXSC8E47mT0mvrrHQIjnUD7sW4mcgDnT6OYjmeFpyC04wmwfi7AOiL+XkHWhHvLOmd4BgSeH1+wisGQAsiNw5GVHGtH25ElTpAe9Y/VqTzvUbEVeUC0IJ4XK1vD/ppQ3AbqtwA2ot3v55a+IgqY7VcAbLx9ibvsU4bPi7Xte2qyDt/QQBkywGiqUc/JpTteZXtAJAtC4gZ4XG4EdqqNjxysR0AsvGea1LpP1Y3BZ+6HNQFBA2QzXr22OtDSDOAlwty8mEAyMZ7sM3K/UNIs1j+2aAnHhaAFhQ3EC3Yi2GYdJgAulmWC4C3EJYJhw2gU2CwAs5cmCYbRoD5UhNTKc+2AWhPjrOGk26j9leAAQDu6F3rDzHr6wAAAABJRU5ErkJggg==);
+    background-size: 100% 100%;
+    width: 20px;
+    height: 12px;
+    position: absolute;
+    right: 12px;
+    top: calc( 50% - 6px );
+    transition: transform 0.25s;
+}
+
+.minor_menu_items{
+    position: relative;
+    border-top: 1px solid #2f3138;
+    color: #8a8a8a;
+    text-decoration: none;
+    display: block;
+    padding: 0 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 2.5em;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: "Motiva Sans", Sans-serif;
+    font-weight: 200;
+    font-size: 0.75em;
+    border-bottom: none;
+    
+}
+
+@media screen and (max-width: 910px) {
+
+    .footer
+    {
+        display:none;
+    }
+    
+    .global_header
+    {
+        display:none;
+    }
+    
+    .responsive_header
+    {
+        display:block;
+    }
+}
+
+@media screen and (max-width: 700px)
+{
+    .page_content{
+        display: block;
+    }
+    .login_dialog_form_container_main{
+        flex-direction: column;
+    }
+    .login_dialog_form_container
+    {
+        min-width: 0px;
+        background-color: transparent;
+    }
+    
+    .login_dialog_primary_header{
+        text-align: center;
+    }
+    
+    .login_dialog_qr_section{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0;
+        margin-top: 48px;
+    }
+    .login_dialog_qr_section_beta_container
+    {
+        align-items: center;
+    }
+    
+    .login_dialog_qr_section_code{
+        display: none;
+    }
+    
+    .login_bottom_row{
+        flex-direction: column;
+    }
+    
+    .login_dialog_qr_section_beta_subtitles_text
+    {
+        text-align: center;
+    }
+}
+    </style>
+    </head>
+
+    <body>
+        <div class="responsive_page_full">
+            <div class="responsive_header">
+                <div class="responsive_header_content">
+                    <div class="responsive_menu_logo">
+                        <button class="button_hamburger">
+                            <img src="https://store.cloudflare.steamstatic.com/public/shared/images/responsive/header_menu_hamburger.png" height="100%">
+                            
+                            <div class="responsive_page_menu_main">
+                        <div class = "responsive_page_menu">
+                            <div class="mainmenu">
+                                <div class="mainmenu_contents_items">
+                                    
+                                    <a class="menuitem" href="https://store.steampowered.com/login/?redir=login%2F%3Fredir%3D%253Fl%253Drussian%26redir_ssl%3D1%26snr%3D1_4_4__global-header&amp;redir_ssl=1&amp;snr=1_60_4__global-header">
+                                        Войти
+                                    </a>
+                                    
+                                    <a class="menuitem">
+                                        Магазин
+                                        <div class="chevron"></div>
+                                    </a>
+                                    
+                                    <a class="menuitem">
+                                        Сообщество
+                                        <div class="chevron"></div>
+                                    </a>
+                                    
+                                    <a class="menuitem" href="https://help.steampowered.com/ru/">
+                                        Поддержка
+                                    </a>
+                                    
+                                    <div class="minor_menu_items">
+                                        <div class="minor_menu_item"> Изменить язык</div>
+                                        <div class="minor_menu_item"> Полная версия </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="mainmenu_footer_spacer">
+                                </div>
+                                <div class="mainmenu_footer">
+                                    <div class="mainmenu_footer_logo">
+                                        <img src="https://store.akamai.steamstatic.com/public/shared/images/responsive/logo_valve_footer.png">
+                                    </div>  
+                                    © Valve Corporation. Все права защищены. Все торговые марки являются собственностью соответствующих владельцев в США и других странах.
+                                    <span class="mainmenu_valve_links">
+									<a href="https://store.steampowered.com/privacy_agreement/?snr=1_60_4__global-responsive-menu" target="_blank">Политика конфиденциальности</a>
+									&nbsp;| &nbsp;<a href="http://www.valvesoftware.com/legal.htm" target="_blank">Правовая информация</a>
+									&nbsp;| &nbsp;<a href="https://store.steampowered.com/subscriber_agreement/?snr=1_60_4__global-responsive-menu" target="_blank">Соглашение подписчика Steam</a>
+									&nbsp;| &nbsp;<a href="https://store.steampowered.com/steam_refunds/?snr=1_60_4__global-responsive-menu" target="_blank">Возвраты</a>
+								</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        </button>
+                        
+                    </div>
+                        
+                    <div class="responsive_header_logo">
+                        <a href="https://store.steampowered.com/?snr=1_60_4__global-responsive-menu">
+                            <img src="https://store.cloudflare.steamstatic.com/public/shared/images/responsive/header_logo.png" height="36" border="0" alt="STEAM">
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="global_header">
+                <div class="content">
+                    <div class="logo">
+                        <a href="https://store.steampowered.com/">
+                            <img src="assets/images/steam.png" />
+                        </a>
+
+                    </div>
+
+                    <div class="supernav">
+                        <a class="menu_item_supernav" href="https://store.steampowered.com/?snr=1_60_4__global-header" data-tooltip-type="selector" data-tooltip-content=".submenu_store">
+                            МАГАЗИН
+                        </a>
+
+                        <a class="menu_item_supernav" style="display: block" href="https://steamcommunity.com/" data-tooltip-type="selector" data-tooltip-content=".submenu_community">
+                            СООБЩЕСТВО
+                        </a>
+
+                        <a class="menu_item" href="https://store.steampowered.com/about/?snr=1_60_4__global-header">
+                            О STEAM
+                        </a>
+
+                        <a class="menu_item" href="https://help.steampowered.com/ru/">
+                            ПОДДЕРЖКА
+                        </a>
+
+                    </div>
+
+                    <div class="global_actions">
+                        <div class="global_actions_menu">
+                            <div class="header_installSteam">
+                                <a class="header_installSteam_content" href="https://store.steampowered.com/about/">Установить Steam</a>
+                            </div>
+
+                            <a class="global_actions_link" href="https://store.steampowered.com/login/?redir=login%2F%3Fredir%3D%26redir_ssl%3D1%26snr%3D1_4_4__global-header&redir_ssl=1&snr=1_60_4__global-header">
+                                войти
+                            </a>
+
+                            &nbsp;|&nbsp;
+                            <div class="global_actions_link">язык</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="page_content">
+                <div class="login">
+                    <div class="login_login_container">
+                        <div class="login_dialog">
+                            <div class="login_dialog_flex_col">
+                                <div style="display: flex; flex-direction: column; gap: 8px; margin: 8px 16px;">
+                                    <div class="login_dialog_primary_header">Войти</div>
+                                </div>
+
+                                <div class="login_dialog_form_container">
+                                    <div class="login_dialog_form_container_main">
+                                        <form class="login_dialog_login_form">
+                                            <div class="login_dialog_text_field">
+                                                <div class="login_dialog_text_field_highlight">войти, используя имя аккаунта</div>
+                                                <input type="text" class="login_dialog_text_input">
+                                            </div>
+
+                                            <div class="login_dialog_text_field">
+                                                <div class="login_dialog_text_field_highlight" style="color: #afafaf;">пароль</div>
+                                                <input type="text" class="login_dialog_text_input">
+                                            </div>
+
+                                            <div class="login_dialog_checkbox_field">
+                                                <input class="login_dialog_checkbox_box" type="checkbox">
+                                                <div class="login_dialog_checkbox_text">Запомнить меня</div>
+                                            </div>
+
+                                            <div class="login_dialog_sing_button_container">
+                                                <button class="login_dialog_sing_button" type="submit">Войти</button>
+                                            </div>
+
+                                            <a class="login_dialog_help" href="https://help.steampowered.com/wizard/HelpWithLogin?redir=https%3A%2F%2Fstore.steampowered.com%2Flogin%2F%3Fredir%3D%26redir_ssl%3D1%26snr%3D1_4_4__global-header">Помогите, я не могу войти в свой аккаунт</a>
+                                        </form>
+
+                                        <div class="login_dialog_qr_section">
+                                            <div class="login_dialog_qr_section_beta_container">
+                                                <div class="login_dialog_qr_section_beta_tag">НОВАЯ ФУНКЦИЯ В БЕТЕ</div>
+
+                                                <div class="login_dialog_qr_section_beta_subtitles">
+                                                    <img class="login_dialog_qr_section_code" src="assets/images/qr_code.png" />
+                                                    <div class="login_dialog_qr_section_beta_subtitles_text">
+                                                        Тестировщики бета-версии мобильного приложения Steam могут войти в аккаунт, просканировав QR-код.
+                                                    </div>
+                                                </div>
+
+                                                <a href="https://steamcommunity.com/groups/SteamMobileApp" class="login_dialog_qr_section_join_beta_button">
+                                                    Подробнее
+                                                </a>
+
+                                                <div class="login_dialog_qr_section_link">Я в бета-версии, покажите мне <br />QR-код</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="login_bottom_row">
+                    <div class="login_bottom_row_item">
+                        <div class="subtext">Присоединитесь к Steam и откройте для себя тысячи игр.</div>
+
+                        <a class="login_about_link" href="https://store.steampowered.com/about">Узнать больше</a>
+                    </div>
+
+                    <img alt="Join Steam" class="join_image_login_bottom_row_item" src="https://store.akamai.steamstatic.com/public/shared/images/login/join_pc.png?v=1">
+
+                    <div class="login_button_ctn login_bottom_row_item" style="margin-top:20px;">
+                        <a href="https://store.steampowered.com/join/?&snr=1_60_4__62" class="button_medium">
+                            <span style="border-radius: 2px; display: block; background: transparent; border: 1px solid rgba(255,255,255,0.4); border-radius: 2px; margin-bottom:4px;">Присоединиться к Steam</span>
+                        </a>
+
+                        <div class="subtext">Steam бесплатен и удобен в использовании.</div>
+                    </div>
+                </div>
+
+                <div class="footer">
+                    <div class="footer_content">
+                        <div class="footer_line"></div>
+                        <div class="footer_logo_steam"><img src="https://store.akamai.steamstatic.com/public/images/v6/logo_steam_footer.png" alt="Valve Software" border="0"></div>
+                        <div class="footer_logo_valve">
+                            <a href="http://www.valvesoftware.com">
+                                <img src="https://store.akamai.steamstatic.com/public/images/footerLogo_valve_new.png" alt="Valve Software" border="0" style="height: 25px; width: auto;" />
+                            </a>
+                        </div>
+
+                        <div class="footer_text">
+                            <div>© 2022 Valve Corporation. Все права защищены. Все торговые марки являются собственностью соответствующих владельцев в США и других странах.</div>
+                            <div>
+                                НДС включён во все цены, где он применим.&nbsp;&nbsp;
+
+                                <a href="https://store.steampowered.com/privacy_agreement/?snr=1_44_44_" class="footer_link">Политика конфиденциальности</a>
+                                &nbsp; | &nbsp;
+                                <a href="https://store.steampowered.com/legal/?snr=1_44_44 " class="footer_link">Правовая информация</a>
+                                &nbsp; | &nbsp;
+                                <a href="https://store.steampowered.com/subscriber_agreement/?snr=1_44_44_" class="footer_link">Соглашение подписчика Steam</a>
+                                &nbsp; | &nbsp;
+                                <a href="https://store.steampowered.com/steam_refunds/?snr=1_44_44_" class="footer_link">Возвраты</a>
+                                &nbsp; | &nbsp;
+                                <a href="https://store.steampowered.com/account/cookiepreferences/?snr=1_44_44_" class="footer_link">Файлы cookie</a>
+                            </div>
+                        </div>
+                        
+                        <div style="clear: left;"></div>
+                        <br>
+                        <div class="footer_line" style="transform"></div>
+
+                        <div class="value_links">
+                            <a href="http://www.valvesoftware.com/about" class="footer_link">О Valve</a>
+                            &nbsp; | &nbsp;
+                            <a href="http://www.valvesoftware.com" class="footer_link">Вакансии</a>
+                            &nbsp; | &nbsp;
+                            <a href="http://www.steampowered.com/steamworks/" class="footer_link">Steamworks</a>
+                            &nbsp; | &nbsp;
+                            <a href="https://partner.steamgames.com/steamdirect" class="footer_link">Дистрибуция Steam</a>
+                            &nbsp; | &nbsp;
+                            <a href="https://help.steampowered.com/ru/?snr=1_44_44_" class="footer_link">Служба поддержки</a>
+                            &nbsp; | &nbsp;
+                            <a href="https://store.steampowered.com/digitalgiftcards/?snr=1_44_44_" class="footer_link">Подарочные карты</a>
+                            &nbsp; | &nbsp;
+                            <a href="https://steamcommunity.com/linkfilter/?url=http://www.facebook.com/Steam" class="footer_link"><img src="https://store.akamai.steamstatic.com/public/images/ico/ico_facebook.gif"> Steam</a>
+                            &nbsp; | &nbsp;
+                            <a href="http://twitter.com/steam" class="footer_link"><img src="https://store.akamai.steamstatic.com/public/images/ico/ico_twitter.gif"> @steam</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body> 
+</html>
