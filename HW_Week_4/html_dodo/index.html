@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Пицца Казань</title>
+        <style>
+            body {
+    margin: 0px;
+    padding: 0px;
+    direction: ltr;
+    min-width: 1024px;
+    height: 100%;
+    overflow: auto;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 400;
+    line-height: 1.4;
+    background: rgb(255, 255, 255);
+}
+
+.left {
+	width: 526px;
+	height: 46px;
+	flex-wrap: wrap;
+	align-content: space-between;
+	justify-content: center;
+    text-align: start;
+    vertical-align:baseline;
+    display:flex;
+    flex-direction:row;
+}
+
+.intro {
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    display: flex;
+    width: 1280px;
+    height: 46px;
+    padding: 24px 0px 16px;
+    z-index: 100;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.site {
+    text-align: center;
+}
+
+.header{
+    margin-right:40px;
+}
+
+.logo {
+    margin-right:40px;
+    width:250px;
+    height:46px;
+}
+
+.headerSloganText {
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    line-height: 1.2;
+    font-family: Dodo, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 500;
+    margin: 0px;
+    width: 196px;
+    height: 22px;
+}
+
+.deliveryStar{
+    width:196px;
+    height:22px;
+}
+
+.header {
+    width: 196px;
+    height: 46px;
+}
+
+.right {
+    display: flex;
+    column-gap: 32px;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 200px;
+    height: 46px;
+}
+
+.dodoCoins {
+    width : 74px;
+    height: 46px;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    cursor: pointer;
+    outline: none;
+    font-family: Dodo, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 500;
+    color: rgb(255, 105, 0);
+}
+
+.dodoIcon {
+    width: 28px;
+    height: 28px;
+}
+
+.buttonLogin {
+    height: 32px;
+    padding: 8px 16px;
+    font-size: 14px;
+    line-height: 16px;
+    background-color: rgb(243, 243, 247);
+    color: rgb(92, 99, 112);
+    border: none;
+    border-radius: 9999px;
+    text-align: center;
+    font-family: Dodo, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.navigation {
+    transform:translateY(-15px);
+    width: 100%;
+    height: 58px;
+    position: sticky;
+    top: 0px;
+    background-color: rgba(255, 255, 255, 0.75);
+    z-index: 10;
+    backdrop-filter: blur(20px);
+}
+
+.grid {
+    position: relative;
+    width:100%;
+    height:58px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gridList {
+    white-space: nowrap;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    display: inline-block;
+    vertical-align: middle;
+    transform: translateX(-215px);
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+.gridElement {
+    margin-left:20px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.gridLink {
+    display: inline-block;
+    font-family: Dodo, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 500;
+    padding: 22px 0px;
+    color: black;
+    font-size: 14px;
+    line-height: 1;
+    text-decoration: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.buttonBuy {
+    transform: translateX(144px);
+    top: 9px;
+    min-width: 90px;
+    -webkit-box-pack: center;
+    justify-content: center;
+    outline: none;
+    border: none;
+    border-radius: 9999px;
+    text-align: center;
+    font-family: Dodo, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 500;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    user-select: none;
+    transition-property: background-color, color;
+    transition-duration: 200ms;
+    transition-timing-function: ease-out;
+    background-color: rgb(255, 105, 0);
+    color: rgb(255, 255, 255);
+    height: 40px;
+    padding: 8px 20px;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.storiesWidget{
+    text-align:center;
+    justify-content:center;
+}
+
+.storiesList {
+    display:flex;
+    scroll-behavior:smooth;
+    flex-wrap: nowrap;
+    justify-content:center;
+    
+}
+
+.storiesElement{
+    margin-right:5px;
+    transform:translateY(11px);
+    height:274px;
+}
+
+.mostPopular {
+    font-family: Dodo, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    margin: 16px 0px;
+    align-items: center;
+    transform:translateX(-550px);
+}
+
+.sliderContainer {
+    height:112px;
+    padding: 9px 20px;
+    width:100%;
+    transform:translateY(-5px);
+    transform:translateX(7px);
+}
+
+.sectionHeader {
+    width: 100%;
+    color: rgb(0, 0, 0);
+    font-family: Dodo, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 600;
+    font-size: 36px;
+    margin: 32px 0px;
+    transform: translateX(-590px);
+}
+
+.productElement {
+    display: flex;
+    flex-flow: column;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    margin-bottom: 60px;
+    cursor: pointer;
+    width: 292px;
+    margin-right: 37.3333px;
+    transform:translateX(55px);
+}
+
+.productSection {
+    width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.productTitle {
+    text-align:start;
+    margin-bottom:8px;
+    margin-top:2px;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    line-height: 24px;
+    font-family: Dodo, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 500;
+}
+
+.productFooter {
+    margin-top: 16px;
+    display: flex;
+}
+
+.productPrice {
+    text-align:start;
+    flex: 1 1 auto;
+    padding-right: 4px;
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    font-family: Dodo, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 600;
+    line-height: 22px;
+    display: flex;
+    flex-flow: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.productOldPrice {
+    font-size: 14px;
+    line-height: 18px;
+    color: rgb(92, 99, 112);
+}
+
+.classProductOldPrice {
+    position: relative;
+}
+
+.buttonSelect {
+    flex: 0 0 auto;
+    height: 40px;
+    min-width: 120px;
+    padding: 8px 20px;
+    font-size: 16px;
+    line-height: 24px;
+    background-color: rgb(255, 105, 0);
+    color: rgb(255, 255, 255);
+    outline: none;
+    border: none;
+    border-radius: 9999px;
+    text-align: center;
+    font-family: Dodo, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 500;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.deliverySection {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content:center;
+}
+
+.deliveryElement {
+    width: 270px;
+    margin-right: 70px;
+    margin-bottom: 20px;
+    font-family: Dodo, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 500;
+    font-size: 15px;
+    text-align:start;
+}
+
+.deliveryTitle {
+    margin: 0px 0px 5px;
+    font-family: Dodo, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 500;
+    font-size: 17px;
+    color: rgb(255, 105, 0);
+    text-transform: uppercase;
+}
+
+.pageFooter {
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    padding-bottom: 20px;
+    font-weight: 400;
+    font-size: 16px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    color: rgb(255, 255, 255);
+    background-color: rgb(24, 24, 24);
+    overflow: hidden;
+    z-index: 0;
+    align-items:center;
+}
+
+.footerRow {
+    background-color: rgb(255, 105, 0);
+    width: 100%;
+    height: 60px;
+    margin: 0px;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    align-items:center;
+}
+
+.secretImg {
+    display: inline-block;
+    width: 48px;
+    height: 50px;
+    margin-right: 20px;
+    vertical-align: top;
+    text-align: center;
+    font-size: 0px;
+    line-height: 0;
+    font-style: normal;
+}
+
+.secretDescription {
+    display: block;
+    -webkit-box-flex: 1;
+    font-weight: 500;
+    font-size: 18px;
+    font-family: Dodo, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    color: rgb(255, 255, 255);
+}
+
+.buttonSecret {
+    background-color: rgb(255, 240, 230);
+    color: rgb(209, 87, 0);
+    height: 40px;
+    padding: 8px 20px;
+    font-size: 16px;
+    line-height: 24px;
+    outline: none;
+    border: none;
+    border-radius: 9999px;
+    text-align: center;
+    font-family: Dodo, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 500;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transform:translateX(225px);
+}
+
+.footerNavigation {
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    background-color: transparent;
+    padding: 30px 0px 0px;
+    display: flex;
+    width: 1280px;
+    transform:translateX(-14px);
+}
+
+.footerNavigationLeft {
+    display: flex;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    height: 100%;
+    text-align:start;
+}
+
+.footerLinksSection {
+    display: flex;
+    flex-direction: column;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    min-width: 130px;
+    margin-right: 60px;
+    margin-bottom: 50px;
+    align-items: flex-start;
+}
+
+.footerLinkTitle {
+    font-weight: 500;
+    letter-spacing: 0.1px;
+    margin-bottom: 7px;
+}
+
+.footerLink {
+    display: inline-block;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    cursor: pointer;
+    line-height: 1.2;
+    margin-bottom: 9px;
+    white-space: normal;
+    opacity: 0.7;
+}
+
+.footerNavigationRight {
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    flex-basis: 30%;
+    margin-bottom: 27px;
+    flex-flow: column nowrap;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    align-items: flex-end;
+    display:flex
+}
+
+.footerMobileApps {
+    flex-wrap: wrap;
+    -webkit-box-pack: end;
+    justify-content: end;
+    gap: 12px;
+    margin-bottom: 16px;
+    display:flex;
+}
+
+.appLinkIos {
+    max-width: 150px;
+}
+
+.appLinkAndroid {
+    max-width: 140px;
+}
+
+.appLinkHuawei {
+    max-width: 133px;
+}
+
+.footerContacts {
+    flex-flow: column nowrap;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.contactsLink {
+    display: inline-block;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    cursor: pointer;
+    opacity: 0.7;
+    -webkit-font-smoothing: antialiased;
+    font-variant-ligatures: no-common-ligatures
+}
+
+.footerRowStatistic {
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    width: 1280px;
+    transform:translateX(-298px);
+}
+
+.footerStatistic {
+    display:flex;
+    justify-self: flex-start;
+    padding-bottom: 27px;
+}
+
+.footerStatsPart {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 299px;
+    margin-right: 60px; 
+    flex-direction:column;
+}
+
+.footerStatsMain {
+    font-weight: 400;
+    font-size: 26px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    margin: 16px 0px 9px;
+}
+
+.footerStatsMore {
+    text-align:start;
+    opacity: 0.5;
+}
+
+.footerCopyRight {
+    width:1320px;
+    flex-wrap: wrap;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content:center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 25px;
+    margin-top: -2px;
+    color: rgba(255, 255, 255, 0.7);
+    display:flex;
+}
+
+.footerCopyRightPart {
+    -webkit-box-align: center;
+    align-items: center;
+    margin-right: 16px;
+}
+
+.footerCopyRightText {
+    flex-wrap: wrap;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 25px;
+    margin-top: -2px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.footerBottomLinks {
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    text-align:start;
+}
+
+.footerBottomLinkElement {
+    margin-right: 16px;
+    display: inline-block;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.footerPartSocialLink {
+    flex-direction:row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+}
+
+.footerSocialLink {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    margin-left: 8px;
+    border-radius: 4px;
+    background-color: rgba(196, 196, 196, 0.2);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.footerOrganizationDetails {
+    text-align:start;
+    width: 100%;
+    margin-top: 20px;
+    padding-right: 42%;
+    font-size: 12px;
+    line-height: 1.4;
+    display: block;
+    color: rgb(92, 99, 112);
+}
+        </style>
+    </head>
+
+    <body>
+        <div class="site">
+            <div class="intro">
+                <div class="left">
+                    <div class="logo">
+                        <img src="assets/images/logo.png" alt="лого Додопиццы" />
+                    </div>
+
+                    <div class="header">
+                        <span class="headerSloganText">Доставка пиццы Казань</span>
+                        <div>
+                            <div class="deliveryStar">
+                                34 мин  
+                                4.8
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="right">
+                    <a class="dodoCoins" href="https://dodopizza.ru/kazan/loyaltyprogram">
+                        <span class="dodoIcon">
+                            <img src="assets/images/dodoCoins.png" alt="додоКоины"/>
+
+                        </span>
+
+                        <span class ="label">Додокоины</span>
+                    </a>
+
+                    <button type="button" class="buttonLogin">Войти</button>
+                </div>
+
+            </div>
+
+            <nav class="navigation">
+                <div class="grid">
+                    <ul class="gridList">
+                        <li class="gridElement">
+                            <a class="gridLink" data-active="false" data-type="primary">Пицца</a>
+                        </li>
+                        <li class="gridElement">
+                            <a class="gridLink" data-active="false" data-type="primary">Комбо</a>
+                        </li>
+                        <li class="gridElement">
+                            <a class="gridLink" data-active="false" data-type="primary">Закуски</a>
+                        </li>
+                        <li class="gridElement">
+                            <a class="gridLink" data-active="false" data-type="primary">Десерты</a>
+                        </li>
+                        <li class="gridElement">
+                            <a class="gridLink" data-active="false" data-type="primary">Напитки</a>
+                        </li>
+                        <li class="gridElement">
+                            <a class="gridLink" data-active="false" data-type="primary">Другие товары</a>
+                        </li>
+                        <li class="gridElement">
+                            <a class="gridLink" data-active="false" data-type="primary">Акции</a>
+                        </li>
+                        <li class="gridElement">
+                            <a class="gridLink" data-active="false" data-type="primary">Контакты</a>
+                        </li>
+                        <li class="gridElement">
+                            <a class="gridLink" data-active="false" data-type="primary">О нас</a>
+                        </li>
+                        <li class="gridElement">
+                            <a class="gridLink" data-active="false" data-type="primary">Работа в Додо</a>
+                        </li>
+
+                    </ul>
+                    <button type="button" class="buttonBuy">Корзина</button>
+                </div>
+                
+
+
+
+
+
+            </nav>
+
+            <section class="storiesWidget" style="position:relative;width:100%; overflow:hidden; height:274px;">
+                <div class="storiesList">
+                    <div class="storiesElement">
+                        <a href="https://dodopizza.ru/kazan">
+                            <img src="assets/images/mercuriy.png" height="254" ; />
+                        </a>
+                    </div>
+                    <div class="storiesElement">
+                        <a href="https://dodopizza.ru/kazan">
+                            <img src="assets/images/news.png" height=254 ; />
+                        </a>
+                    </div>
+                    <div class="storiesElement">
+                        <a href="https://dodopizza.ru/kazan">
+                            <img src="assets/images/scammers.png" height=254 ; />
+                        </a>
+                    </div>
+                    <div class="storiesElement">
+                        <a href="https://dodopizza.ru/kazan">
+                            <img src="assets/images/inspiration.png" height=254 ; />
+                        </a>
+                    </div>
+                    <div class="storiesElement">
+                        <a href="https://dodopizza.ru/kazan">
+                            <img src="assets/images/multy.png" height=254 ; />
+                        </a>
+                    </div>
+                    <div class="storiesElement">
+                        <a href="https://dodopizza.ru/kazan">
+                            <img src="assets/images/child.png" height=254 ; />
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <div>
+
+                <div>
+                    <h2 class="mostPopular">Часто заказывают</h2>
+
+                    <div class="sliderContainer">
+                        <a href="https://dodopizza.ru/kazan">
+                            <img src="assets/images/pepperoni.png" height=117 style="margin-right:30px; transform:translateX(27px);" />
+                        </a>
+                        <a href="https://dodopizza.ru/kazan">
+                            <img src="assets/images/triplePizza.png" height=121 style="margin-right:14px" />
+                        </a>
+                        <a href="https://dodopizza.ru/kazan">
+                            <img src="assets/images/dodster.png" height=120 style="margin-right:14px" />
+                        </a>
+                        <a href="https://dodopizza.ru/kazan">
+                            <img src="assets/images/brusletiki.png" height=120 style="margin-right:14px" />
+                        </a>
+                        <a href="https://dodopizza.ru/kazan">
+                            <img src="assets/images/doubleSous.png" height=120 style="margin-right:14px" />
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h2 class="sectionHeader">Пицца</h2>
+                    <section class="productSection">
+                        <div class=" productElement">
+                            <a href="https://dodopizza.ru/kazan">
+                                <img src="assets/images/pizza1.png" height=282 />
+                            </a>
+                            <div class="productTitle">Пицца из половинок</div>
+                            <div style="text-align:start;">Соберите свою пиццу 35 см с двумя разными вкусами</div>
+                            <footer class="productFooter">
+                                <div class="productPrice">
+                                    от 645 ₽
+                                </div>
+                                <button data-testid="product__button" type="button" data-type="primary" data-size="medium" class="buttonSelect">Собрать</button>
+                            </footer>
+                        </div>
+
+                        <div class=" productElement">
+                            <a href="https://dodopizza.ru/kazan">
+                                <img src="assets/images/pizza2.png" height=282 />
+                            </a>
+                            <div class="productTitle">Грибная</div>
+                            <div style="text-align:start;">Шампиньоны, грибной соус, красный лук, моцарелла, смесь сыров чеддер и пармезан, соус альфредо, чеснок</div>
+                            <footer class="productFooter">
+                                <div class="productPrice">
+                                    от 469 ₽
+                                </div>
+                                <button data-testid="product__button" type="button" data-type="primary" data-size="medium" class="buttonSelect">Выбрать</button>
+                            </footer>
+                        </div>
+
+                        <div class=" productElement">
+                            <a href="https://dodopizza.ru/kazan">
+                                <img src="assets/images/pizza3.png" height=282 />
+                            </a>
+                            <div class="productTitle">Цепленок карри</div>
+                            <div style="text-align:start;">Цыпленок, ананасы, соус карри, красный лук, сладкий перец, моцарелла, томатный соус</div>
+                            <footer class="productFooter">
+                                <div class="productPrice">
+                                    от 419 ₽
+                                </div>
+                                <button data-testid="product__button" type="button" data-type="primary" data-size="medium" class="buttonSelect">Выбрать</button>
+                            </footer>
+                        </div>
+
+                        <div class=" productElement">
+                            <a href="https://dodopizza.ru/kazan">
+                                <img src="assets/images/pizza4.png" height=282 />
+                            </a>
+                            <div class="productTitle">Мясной микс</div>
+                            <div style="text-align:start;">Пастрами из индейки, острая чоризо, пикантная пепперони, бекон, моцарелла, томатный соус</div>
+                            <footer class="productFooter">
+                                <div class="productPrice">
+                                    от 469 ₽
+                                </div>
+                                <button data-testid="product__button" type="button" data-type="primary" data-size="medium" class="buttonSelect">Выбрать</button>
+                            </footer>
+                        </div>
+
+                        <div class=" productElement">
+                            <a href="https://dodopizza.ru/kazan">
+                                <img src="assets/images/pizza5.png" height=282 />
+                            </a>
+                            <div class="productTitle">Сырная</div>
+                            <div style="text-align:start;">Моцарелла, сыры чеддер и пармезан, соус альфредо</div>
+                            <footer class="productFooter">
+                                <div class="productPrice">
+                                    от 289 ₽
+                                </div>
+                                <button data-testid="product__button" type="button" data-type="primary" data-size="medium" class="buttonSelect">Выбрать</button>
+                            </footer>
+                        </div>
+
+                        <div class=" productElement">
+                            <a href="https://dodopizza.ru/kazan">
+                                <img src="assets/images/pizza6.png" height=282 />
+                            </a>
+                            <div class="productTitle">Ветчина и сыр</div>
+                            <div style="text-align:start;">Ветчина, моцарелла, соус альфредо</div>
+                            <footer class="productFooter">
+                                <div class="productPrice">
+                                    от 309 ₽
+                                </div>
+                                <button data-testid="product__button" type="button" data-type="primary" data-size="medium" class="buttonSelect">Выбрать</button>
+                            </footer>
+                        </div>
+
+                        <div class=" productElement">
+                            <a href="https://dodopizza.ru/kazan">
+                                <img src="assets/images/pizza7.png" height=282 />
+                            </a>
+                            <div class="productTitle">Пепперони фреш</div>
+                            <div style="text-align:start;">Пикантная пепперони, увеличенная порция моцареллы, томаты, томатный соус</div>
+                            <footer class="productFooter">
+                                <div class="productPrice">
+                                    от 289 ₽
+                                </div>
+                                <button data-testid="product__button" type="button" data-type="primary" data-size="medium" class="buttonSelect">Выбрать</button>
+                            </footer>
+                        </div>
+
+                        <div class=" productElement">
+                            <a href="https://dodopizza.ru/kazan">
+                                <img src="assets/images/pizza8.png" height=282 />
+                            </a>
+                            <div class="productTitle">Пицца-конструктор</div>
+                            <div style="text-align:start;">В основе увеличенная порция моцареллы и томатный соус, а другие ингредиенты можно выбрать на свой вкус</div>
+                            <footer class="productFooter">
+                                <div class="productPrice">
+                                    от 289 ₽
+                                </div>
+                                <button data-testid="product__button" type="button" data-type="primary" data-size="medium" class="buttonSelect">Выбрать</button>
+                            </footer>
+                        </div>
+                    </section>
+                </div>
+
+                <div>
+                    <h2 class="sectionHeader">Комбо</h2>
+                    <section class="productSection">
+                        <div class=" productElement">
+                            <a href="https://dodopizza.ru/kazan">
+                                <img src="assets/images/combo1.png" height=282 />
+                            </a>
+                            <div class="productTitle">Миу-комбо</div>
+                            <div style="text-align:start;">Вкусное развлечение для детей и родителей — маленькая «Миу-пицца» на выбор и 2 коллекционные игрушки</div>
+                            <footer class="productFooter">
+                                <div class="productPrice">
+                                    649 ₽
+                                    <img src="assets/images/discount1.png" width=40 />
+                                </div>
+                                <button data-testid="product__button" type="button" data-type="primary" data-size="medium" class="buttonSelect">Выбрать</button>
+                            </footer>
+                        </div>
+
+                        <div class=" productElement">
+                            <a href="https://dodopizza.ru/kazan">
+                                <img src="assets/images/combo2.png" height=282 />
+                            </a>
+                            <div class="productTitle">2 пиццы</div>
+                            <div style="text-align:start;">Парочка, что надо. 2 средних пиццы. Пиццы в комбо можно менять</div>
+                            <footer class="productFooter">
+                                <div class="productPrice">
+                                    989 ₽
+                                    <img src="assets/images/discount2.png" width=40 />
+                                </div>
+                                <button data-testid="product__button" type="button" data-type="primary" data-size="medium" class="buttonSelect">Выбрать</button>
+                            </footer>
+                        </div>
+
+                        <div class=" productElement">
+                            <a href="https://dodopizza.ru/kazan">
+                                <img src="assets/images/combo3.png" height=282 />
+                            </a>
+                            <div class="productTitle">3 пиццы</div>
+                            <div style="text-align:start;">Три удовольствия в нашем меню — это 3 средних пиццы на ваш выбор. Пиццы в комбо можно менять</div>
+                            <footer class="productFooter">
+                                <div class="productPrice">
+                                    1099 ₽
+                                    <img src="assets/images/discount3.png" width=40 />
+                                </div>
+                                <button data-testid="product__button" type="button" data-type="primary" data-size="medium" class="buttonSelect">Выбрать</button>
+                            </footer>
+                        </div>
+
+                        <div class=" productElement">
+                            <a href="https://dodopizza.ru/kazan">
+                                <img src="assets/images/combo4.png" height=282 />
+                            </a>
+                            <div class="productTitle">2 пиццы и напиток</div>
+                            <div style="text-align:start;">Для уютных посиделок. 2 маленькие пиццы и напиток на выбор. Для компании из 2–4 человек. Пиццы в комбо можно менять</div>
+                            <footer class="productFooter">
+                                <div class="productPrice">
+                                    1099 ₽
+                                    <img src="assets/images/discount4.png" width=40 />
+                                </div>
+                                <button data-testid="product__button" type="button" data-type="primary" data-size="medium" class="buttonSelect">Выбрать</button>
+                            </footer>
+                        </div>
+                    </section>
+
+                </div>
+
+                <div>
+                    <h2 class="sectionHeader">Закуски</h2>
+                    <section class="productSection">
+                        <div class=" productElement">
+                            <a href="https://dodopizza.ru/kazan">
+                                <img src="assets/images/snack1.png" height=282 />
+                            </a>
+                            <div class="productTitle">Додстер Карри</div>
+                            <div style="text-align:start;">Горячая закуска с цыпленком, ананасом, сладким перцем, моцареллой и пряным соусом карри в тонкой пшеничной лепешке</div>
+                            <footer class="productFooter">
+                                <div class="productPrice">
+                                    189 ₽
+                                </div>
+                                <button data-testid="product__button" type="button" data-type="primary" data-size="medium" class="buttonSelect">В корзину</button>
+                            </footer>
+                        </div>
+
+                        <div class=" productElement">
+                            <a href="https://dodopizza.ru/kazan">
+                                <img src="assets/images/snack2.png" height=282 />
+                            </a>
+                            <div class="productTitle">Додстер</div>
+                            <div style="text-align:start;">Легендарная горячая закуска с цыпленком, томатами, моцареллой, соусом ранч в тонкой пшеничной лепешке</div>
+                            <footer class="productFooter">
+                                <div class="productPrice">
+                                    169 ₽
+                                </div>
+                                <button data-testid="product__button" type="button" data-type="primary" data-size="medium" class="buttonSelect">В корзину</button>
+                            </footer>
+                        </div>
+                    </section>
+                </div>
+
+                <div>
+                    <h2 class="sectionHeader">Десерты</h2>
+                    <section class="productSection">
+                        <div class=" productElement">
+                            <a href="https://dodopizza.ru/kazan">
+                                <img src="assets/images/desserts1.png" height=282 />
+                            </a>
+                            <div class="productTitle">Манго-шейк</div>
+                            <div style="text-align:start;">Жаркое тропическое лето в стакане — молочный коктейль с манговым пюре</div>
+                            <footer class="productFooter">
+                                <div class="productPrice">
+                                    199 ₽
+                                </div>
+                                <button data-testid="product__button" type="button" data-type="primary" data-size="medium" class="buttonSelect">В корзину</button>
+                            </footer>
+                        </div>
+
+                        <div class=" productElement">
+                            <a href="https://dodopizza.ru/kazan">
+                                <img src="assets/images/desserts2.png" height=282 />
+                            </a>
+                            <div class="productTitle">Айс капучино</div>
+                            <div style="text-align:start;">Холодный напиток для тех, кто даже в жару наслаждается кофе. В составе мороженое, эспрессо и молоко</div>
+                            <footer class="productFooter">
+                                <div class="productPrice">
+                                    199 ₽
+                                </div>
+                                <button data-testid="product__button" type="button" data-type="primary" data-size="medium" class="buttonSelect">В корзину</button>
+                            </footer>
+                        </div>
+
+                        <div class=" productElement">
+                            <a href="https://dodopizza.ru/kazan">
+                                <img src="assets/images/desserts3.png" height=282 />
+                            </a>
+                            <div class="productTitle">Молочный коктейль с печеньем Орео</div>
+                            <div style="text-align:start;">Как вкуснее есть печенье? Его лучше пить! Попробуйте молочный коктейль с мороженым и дробленым печеньем «Орео»</div>
+                            <footer class="productFooter">
+                                <div class="productPrice">
+                                    199 ₽
+                                </div>
+                                <button data-testid="product__button" type="button" data-type="primary" data-size="medium" class="buttonSelect">В корзину</button>
+                            </footer>
+                        </div>
+                    </section>
+                </div>
+
+                <div>
+                    <h2 class="sectionHeader">Напитки</h2>
+                    <section class="productSection">
+                        <div class=" productElement">
+                            <a href="https://dodopizza.ru/kazan">
+                                <img src="assets/images/drink1.png" height=282 />
+                            </a>
+                            <div class="productTitle">Coca-Cola Zero, 0,5 л</div>
+                            <footer class="productFooter">
+                                <div class="productPrice">
+                                    105 ₽
+                                </div>
+                                <button data-testid="product__button" type="button" data-type="primary" data-size="medium" class="buttonSelect">В корзину</button>
+                            </footer>
+                        </div>
+
+                        <div class=" productElement">
+                            <a href="https://dodopizza.ru/kazan">
+                                <img src="assets/images/drink2.png" height=282 />
+                            </a>
+                            <div class="productTitle">Coca-Cola, 0,5 л</div>
+                            <footer class="productFooter">
+                                <div class="productPrice">
+                                    105 ₽
+                                </div>
+                                <button data-testid="product__button" type="button" data-type="primary" data-size="medium" class="buttonSelect">В корзину</button>
+                            </footer>
+                        </div>
+                    </section>
+                </div>
+
+                <div>
+                    <h2 class="sectionHeader" style="transform:translateX(-535px);">Другие товары</h2>
+                    <section class="productSection">
+                        <div class=" productElement">
+                            <a href="https://dodopizza.ru/kazan">
+                                <img src="assets/images/other1.png" width=282 height=282 />
+                            </a>
+                            <div class="productTitle">Додо Книги 1+2</div>
+                            <div style="text-align:start;">Набор из двух книг — «Додо Книга 1» и «Додо Книга 2». Рассказываем об истории, ценностях и развитии компании</div>
+                            <footer class="productFooter">
+                                <div class="productPrice">
+                                    195₽
+                                </div>
+                                <button data-testid="product__button" type="button" data-type="primary" data-size="medium" class="buttonSelect">В корзину</button>
+                            </footer>
+                        </div>
+
+                        <div class=" productElement">
+                            <a href="https://dodopizza.ru/kazan">
+                                <img src="assets/images/other2.png" width=282 height=282 />
+                            </a>
+                            <div class="productTitle">Подарочный сертификат</div>
+                            <div style="text-align:start;">Сертификат на любую большую пиццу. Действует на доставку, самовывоз и в ресторане</div>
+                            <footer class="productFooter">
+                                <div class="productPrice">
+                                    949 ₽
+                                </div>
+                                <button data-testid="product__button" type="button" data-type="primary" data-size="medium" class="buttonSelect">В корзину</button>
+                            </footer>
+                        </div>
+                    </section>
+                </div>
+
+                <div>
+                    <h2 class="sectionHeader" style="transform:translateX(-507px)">Доставка и оплата</h2>
+
+                    <section class="deliverySection">
+                        <div class="deliveryElement">
+                            <h1 class="deliveryTitle">60 МИНУТ ИЛИ ПИЦЦА БЕСПЛАТНО</h1>
+                            Если мы не успеем доставить продукты в течение 60 минут, курьер подарит вам сертификат или промокод на большую пиццу 35 см на традиционном тесте.
+                        </div>
+
+                        <div class="deliveryElement">
+                            <h1 class="deliveryTitle">ДОДО ПИЦЦА — СЕТЬ ПИЦЦЕРИЙ № 1 В РОССИИ</h1>
+                            по доставке пиццы по данным из отчета Euromonitor International на май 2017 года.
+                            <br />
+                            Все цены в меню указаны без учета скидок.
+                        </div>
+
+                        <div class="deliveryElement">
+                            <h1 class="deliveryTitle">529 ₽</h1>
+                            Минимальная сумма доставки
+                            <br />
+                            <h1 class="deliveryTitle">7 000 ₽</h1>
+                            Максимальная сумма при оплате наличными
+                            <br />
+                            Изображения продуктов могут отличаться от продуктов в заказе.
+                        </div>
+
+                        <div class="deliveryElement">
+                            <h1 class="deliveryTitle">ЗОНА ДОСТАВКИ ОГРАНИЧЕНА</h1>
+                            <img src="assets/images/delivery.png" width=281 height=298 />
+                        </div>
+                    </section>
+                </div>
+
+            </div>
+
+            <div class="pageFooter">
+                <div class="footerRow">
+                    <img class="secretImg" src="assets/images/secretBuyer.png" style="transform:translateX(-253px)">
+                    <div class="secretDescription" style="transform:translateX(-253px)">Стань тайным покупателем Додо Пиццы и получи пиццу в подарок</div>
+                    <button type="button" class="buttonSecret">Заполнить анкету</button>
+                </div>
+
+                <div class="footerNavigation">
+                    <div class="footerNavigationLeft">
+                        <div class="footerLinksSection">
+                            <span class="footerLinkTitle">Додо Пицца</span>
+                            <a class="footerLink" href="https://dodopizza.ru/kazan/about" data-active="false" data-type="primary">О нас</a>
+                            <a class="footerLink" href="https://book.dodopizza.info/" data-active="false" data-type="primary">Додо-книга</a>
+                            <a class="footerLink" href="https://sila-uma.ru/aboutdodo/" data-active="false" data-type="primary">Блог «Сила ума»</a>
+                            <a class="footerLink" href="https://dodo.dev/" data-active="false" data-type="primary">Додо ИС</a>
+                        </div>
+
+                        <div class="footerLinksSection">
+                            <span class="footerLinkTitle">Работа</span>
+                            <a class="footerLink" href="https://rabotavdodo.ru/?utm_source=web" data-active="false" data-type="primary">В пиццерии</a>
+                        </div>
+
+                        <div class="footerLinksSection">
+                            <span class="footerLinkTitle">Партнерам</span>
+                            <a class="footerLink" href="https://dodofranchise.ru/" data-active="false" data-type="primary">Франшиза</a>
+                            <a class="footerLink" href="https://dodoinvest.com/" data-active="false" data-type="primary">Инвестиции</a>
+                            <a class="footerLink" href="https://bidzaar.com/companies/view/d1827205-1309-4442-8adb-f6887474e684" data-active="false" data-type="primary">Поставщикам</a>
+                            <a class="footerLink" href="https://www.dodoarenda.ru/" data-active="false" data-type="primary">Предложить помещение</a>
+                        </div>
+
+                        <div class="footerLinksSection">
+                            <span class="footerLinkTitle">Это интересно</span>
+                            <a class="footerLink" href="https://bezperchatok.ru/" data-active="false" data-type="primary">Почему мы готовим без перчаток?</a>
+                            <a class="footerLink" href="https://www.dodokids.ru/" data-active="false" data-type="primary">Экскурсии и мастер-классы</a>
+                            <a class="footerLink" href="https://b2b.dodopizza.org/" data-active="false" data-type="primary">Корпоративные заказы</a>
+                        </div>
+
+                    </div>
+
+                    <div class="footerNavigationRight">
+                        <div class="footerMobileApps">
+                            <a href="https://app.appsflyer.com/id894649641?af_ad=icon&pid=dodopizza.site&af_click_lookback=7d&c=web" class="appLinkIos">
+                                <img src="assets/images/link1.png" />
+                            </a>
+                            <a href="https://app.appsflyer.com/ru.dodopizza.app?af_ad=icon&pid=dodopizza.site&af_click_lookback=7d&c=web" class="appLinkAndroid">
+                                <img src="assets/images/link2.png" />
+                            </a>
+                            <a href="https://appgallery.huawei.com/app/C101170713?sharePrepath=ag&locale=ru_RU&source=website" class="appLinkHuawei">
+                                <img src="assets/images/link3.png" />
+                            </a>
+
+                        </div>
+
+                        <div class="footerContacts">
+                            <a href="mailto:feedback@dodopizza.com" style="color: rgb(255, 255, 255); opacity: 0.7; cursor: pointer; ">mailto:feedback@dodopizza.com</a>
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="footerRowStatistic">
+                    <div class="footerStatistic">
+                        <div class="footerStatsPart">
+                            <span class="footerStatsMain">1 421 355 606 ₽</span>
+                            <span class="footerStatsMore">Выручка российской сети в этом месяце. В прошлом — 4 398 007 260 ₽</span>
+                        </div>
+
+                        <div class="footerStatsPart">
+                            <span class="footerStatsMain">834 пиццерии</span>
+                            <span class="footerStatsMore">в 16 странах, от Великобритании до Нигерии</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footerCopyRight">
+                    <div class="footerCopyRightPart">
+                        <img src="assets/images/copyRight.png" />
+                        <span class="footerCopyRightText">© 2022</span>
+                    </div>
+
+                    <div class="footerBottomLinks">
+                        <a class="footerBottomLinkElement" href="https://dodopizza.ru/kazan/legal">Правовая информация</a>
+                        <a class="footerBottomLinkElement" href="https://drive.google.com/file/d/1GWaKPdU7t5URgMkh_X4pJqmyZuGr9FdQ">Калорийность и состав</a>
+                        <a class="footerBottomLinkElement" href="https://dodopizza.ru/kazan/faq">Помощь</a>
+                    </div>
+
+                    <div class="footerPartSocialLink">
+                        <a class="footerSocialLink" href="https://ok.ru/dodopizza">
+                            <img src="assets/images/socialLink1.png"/>
+                        </a>
+                        <a class="footerSocialLink" href="https://vk.com/dodo">
+                            <img src="assets/images/socialLink2.png" />
+                        </a>
+                        <a class="footerSocialLink" href="https://www.youtube.com/dodomovie">
+                            <img src="assets/images/socialLink3.png" />
+                        </a>
+
+
+                    </div>
+
+                    <div class="footerOrganizationDetails">
+                        © 2022 ООО “Додо Франчайзинг”<br />
+                        ОГРН 1131101001844, ИНН 1101140415<br />
+                        167001, Республика Коми, г. Сыктывкар, Октябрьский проспект, д. 16
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html> 
