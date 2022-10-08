@@ -59,7 +59,7 @@ namespace _01_10_2022_server_http_steam
 
                 if(Directory.Exists(_serverSetting.Path))
                 {
-                    buffer = getFile(_httpContext.Request.RawUrl.Replace("%20", " "));
+                    buffer = GetFIle(_httpContext.Request.RawUrl.Replace("%20", " "));
 
                     if (buffer == null)
                     {
@@ -83,7 +83,7 @@ namespace _01_10_2022_server_http_steam
             }
         }
 
-        private byte[] getFile(string rawUrl)
+        private byte[] GetFIle(string rawUrl)
         {
             byte[] buffer = null;
             var filePath = _serverSetting.Path + rawUrl;
