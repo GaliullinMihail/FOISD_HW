@@ -22,7 +22,17 @@ namespace _01_10_2022_server_http_steam
         public void Start()
         {
             _listener.Start();
-            _serverSetting = JsonSerializer.Deserialize<ServerSettings>(File.ReadAllBytes("./settings.json"));
+            if (File.Exists("./settings.json"))
+            {
+                _serverSetting = JsonSerializer.Deserialize<ServerSettings>(File.ReadAllBytes("./settings.json"));
+                
+            }
+            else
+            {
+                _serverSetting = new ServerSettings();
+                _serverSetting.Port = 7777;
+                _serverSetting.Path = "@\"./site/\"";
+            }
             _listener.Prefixes.Clear();
             _listener.Prefixes.Add($"http://localhost:{_serverSetting.Port}/");
             Listening();
