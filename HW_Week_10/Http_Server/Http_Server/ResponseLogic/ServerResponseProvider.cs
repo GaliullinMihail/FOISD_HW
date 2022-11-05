@@ -75,6 +75,11 @@ public static class ServerResponseProvider
                 controllerName,
                 StringComparison.CurrentCultureIgnoreCase));
 
+        var check = controller?.GetMethods();
+        var check1 = controller?.GetMethods()
+            .FirstOrDefault(t =>
+                t.GetCustomAttributes(true).Any(attr => attr.GetType().Name == $"Http{request.HttpMethod}"));
+
         var method = controller?.GetMethods()
             .FirstOrDefault(t => t.GetCustomAttributes(true)
                 .Any(attr => attr.GetType().Name == $"Http{request.HttpMethod}"

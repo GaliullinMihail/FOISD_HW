@@ -5,24 +5,24 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Http_Server.Controllers;
 
-[HttpController("/accounts$")]
+[HttpController("accounts")]
 public class AccountController  
 {
-    [HttpGet("/accounts$")]
+    [HttpGET("")]
     public List<Account> GetAccounts()
     {
-        var repository = new AccountRepository(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=SteamDB;Integrated Security=True");
+        var repository = new AccountRepository(@"Data Source=.\SQLEXPRESS;Initial Catalog=SteamDB;Integrated Security=True");
         return repository.GetAll().ToList();
     }
 
-    [HttpGet("/accounts/[1-9][0-9]*$")]
+    [HttpGET(@"\d")]
     public Account? GetAccountById(int id)
     {
-        var repository = new AccountRepository(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=SteamDB;Integrated Security=True");
+        var repository = new AccountRepository(@"Data Source=.\SQLEXPRESS;Initial Catalog=SteamDB;Integrated Security=True");
         return repository.GetById(id);
     }
 
-    [HttpPost("/accounts$")]
+    [HttpPOST("")]
     public void SaveAccount(string query)
     {
         var queryParams = query.Split('&')
@@ -30,7 +30,7 @@ public class AccountController
             .Select(pair => pair[1])
             .ToArray();
 
-        var repository = new AccountRepository(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=SteamDB;Integrated Security=True");
+        var repository = new AccountRepository(@"Data Source=.\SQLEXPRESS;Initial Catalog=SteamDB;Integrated Security=True");
         repository.Insert(queryParams[0], queryParams[1]);
     }
 }
